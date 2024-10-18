@@ -2,11 +2,15 @@
 <menu xmlns:android="http://schemas.android.com/apk/res/android">
     <item
         android:id="@+id/opc1"
-        android:title="Ayuda"/>
+        android:title="Ver"/>
     <item
         android:id="@+id/opc2"
-        android:title="creador"/>
+        android:title="Registro"/>
     <item
         android:id="@+id/opc3"
         android:title="creador"/>
+
+    <item
+        android:id="@+id/opc4"
+        android:title="contacto"/>
 </menu>

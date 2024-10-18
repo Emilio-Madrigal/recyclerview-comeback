@@ -17,9 +17,7 @@ import com.example.listadin.ver;
 import global.info;
 
 public class adaptadorver extends RecyclerView.Adapter<adaptadorver.activity> {
-    public Context context;
 
-    @NonNull
     @Override
     public activity onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {
 

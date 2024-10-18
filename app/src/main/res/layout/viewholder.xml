@@ -9,7 +9,6 @@
         android:layout_height="100dp"
         android:id="@+id/theview"
         android:textSize="35sp"
-        android:clickable="true"
-        android:text="YIPPEE" />
+        android:clickable="true" />
 
 </LinearLayout>
