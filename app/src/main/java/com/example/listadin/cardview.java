@@ -11,14 +11,11 @@ import android.view.MenuItem;
 import android.view.View;
 import android.widget.Button;
 import android.widget.TextView;
-
 import androidx.activity.EdgeToEdge;
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.core.app.ActivityCompat;
-import androidx.core.graphics.Insets;
-import androidx.core.view.ViewCompat;
-import androidx.core.view.WindowInsetsCompat;
+import androidx.appcompat.widget.Toolbar;
 
 import global.info;
 
@@ -26,6 +23,7 @@ public class cardview extends AppCompatActivity {
 
     Button llamar;
     TextView NombreEC,PuntosC,JuegosJC,JuegosGC,JuegosEC,NocontactoEC;
+    Toolbar toolbar;
 
     @SuppressLint("MissingInflatedId")
     @Override
@@ -39,6 +37,8 @@ public class cardview extends AppCompatActivity {
         JuegosGC=findViewById(R.id.JGE);
         JuegosEC=findViewById(R.id.JEE);
         NocontactoEC=findViewById(R.id.NCE);
+        toolbar=findViewById(R.id.toolbarCard);
+        setSupportActionBar(toolbar);
 
         llamar = findViewById(R.id.llamar);
 
@@ -99,6 +99,10 @@ public class cardview extends AppCompatActivity {
         }
         if(item.getItemId()==R.id.opc4){
             Intent cambio8 = new Intent(this, Contacto.class);
+            startActivity(cambio8);
+        }
+        if(item.getItemId()==R.id.opc5){
+            Intent cambio8 = new Intent(this,Modificar.class);
             startActivity(cambio8);
         }
         return super.onOptionsItemSelected(item);

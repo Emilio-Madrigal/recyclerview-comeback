@@ -7,7 +7,7 @@
     <TextView
         android:layout_width="match_parent"
         android:layout_height="100dp"
-        android:id="@+id/theview"
+        android:id="@+id/theviewE"
         android:textSize="35sp"
         android:clickable="true"
         android:contextClickable="true"/>

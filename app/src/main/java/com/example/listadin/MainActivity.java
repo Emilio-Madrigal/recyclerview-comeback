@@ -40,6 +40,8 @@ public class MainActivity extends AppCompatActivity {
         JuegosG=findViewById(R.id.JGEM);
         JuegosE=findViewById(R.id.JEEM);
         NocontactoE=findViewById(R.id.NCEM);
+        limpieza=findViewById(R.id.limpiarB);
+        guardar=findViewById(R.id.GuardarB);
         setSupportActionBar(toolbar);
 
         limpieza.setOnClickListener(new View.OnClickListener(){
@@ -78,6 +80,12 @@ public class MainActivity extends AppCompatActivity {
         unequipo.setContact(NocontactoE.getText().toString());
         info.lista.add(unequipo);
         Toast.makeText(this, "Elementos guardados", Toast.LENGTH_SHORT).show();
+        NombreE.setText("");
+        Puntos.setText("");
+        JuegosJ.setText("");
+        JuegosG.setText("");
+        JuegosE.setText("");
+        NocontactoE.setText("");
     }
     @Override
     public void onOptionsMenuClosed(Menu menu) {
@@ -94,8 +102,8 @@ public class MainActivity extends AppCompatActivity {
     @Override
     public boolean onOptionsItemSelected(@NonNull MenuItem item) {
         if(item.getItemId()==R.id.opc1){
-            Intent cambio7 = new Intent(this, cardview.class);
-            startActivity(cambio7);
+            Intent cambio8 = new Intent(this, ver.class);
+            startActivity(cambio8);
         }
         if(item.getItemId()==R.id.opc2){
             Intent cambio8 = new Intent(this, MainActivity.class);
@@ -107,6 +115,14 @@ public class MainActivity extends AppCompatActivity {
         }
         if(item.getItemId()==R.id.opc4){
             Intent cambio8 = new Intent(this, Contacto.class);
+            startActivity(cambio8);
+        }
+        if(item.getItemId()==R.id.opc5){
+            Intent cambio8 = new Intent(this,Modificar.class);
+            startActivity(cambio8);
+        }
+        if(item.getItemId()==R.id.opc6){
+            Intent cambio8 = new Intent(this, Eliminar.class);
             startActivity(cambio8);
         }
         return super.onOptionsItemSelected(item);

@@ -1,5 +1,6 @@
 package com.example.listadin;
 
+import android.annotation.SuppressLint;
 import android.content.Context;
 import android.os.Bundle;
 
@@ -10,23 +11,24 @@ import androidx.recyclerview.widget.RecyclerView;
 
 import adaptador.adaptadorver;
 
-public class ver extends AppCompatActivity {
+public class Ver2 extends AppCompatActivity {
 
-    RecyclerView rv;
+    RecyclerView rv2;
     Context context;
 
+    @SuppressLint("MissingInflatedId")
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         EdgeToEdge.enable(this);
-        setContentView(R.layout.activity_ver);
+        setContentView(R.layout.activity_ver2);
 
-        rv=findViewById(R.id.recyclerview);
+        rv2=findViewById(R.id.recyclerviewE);
         adaptadorver av = new adaptadorver();
         av.context=this;
         LinearLayoutManager llm = new LinearLayoutManager(this, LinearLayoutManager.VERTICAL, false);
-        rv.setLayoutManager(llm);
-        rv.setAdapter(av);
+        rv2.setLayoutManager(llm);
+        rv2.setAdapter(av);
 
     }
 

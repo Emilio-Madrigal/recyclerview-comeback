@@ -13,4 +13,13 @@
     <item
         android:id="@+id/opc4"
         android:title="contacto"/>
+    <item
+        android:id="@+id/opc5"
+        android:title="modificar">
+    </item>
+    <item
+        android:id="@+id/opc6"
+        android:title="Eliminar">
+
+    </item>
 </menu>

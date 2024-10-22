@@ -159,12 +159,14 @@
             android:layout_height="wrap_content">
 
             <Button
+                android:id="@+id/GuardarB"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:onClick="guardardor"
                 android:text="guardar"></Button>
 
             <Button
+                android:id="@+id/limpiarB"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:onClick="limpieza"

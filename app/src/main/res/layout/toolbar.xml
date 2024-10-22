@@ -10,13 +10,20 @@
         android:layout_height="wrap_content"
         android:orientation="horizontal"
         >
+        <ImageView
+            android:layout_width="60dp"
+            android:layout_height="60dp"
+            android:src="@drawable/logo2">
+
+        </ImageView>
 
         <TextView
+            android:layout_gravity="center"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="Liga de futbol"
             android:textSize="25sp"
-            android:fontFamily="@font/roboto"
+            android:fontFamily="@font/energy"
             android:textColor="@color/black">
         </TextView>
     </LinearLayout>
