@@ -102,8 +102,15 @@ public class MainActivity extends AppCompatActivity {
     @Override
     public boolean onOptionsItemSelected(@NonNull MenuItem item) {
         if(item.getItemId()==R.id.opc1){
+
+            Integer tamaño = info.lista.size();
+            if (tamaño == 0) {
+                Toast.makeText(this, "Lista vacía", Toast.LENGTH_SHORT).show();
+            }
+            else{
             Intent cambio8 = new Intent(this, ver.class);
             startActivity(cambio8);
+            }
         }
         if(item.getItemId()==R.id.opc2){
             Intent cambio8 = new Intent(this, MainActivity.class);
@@ -118,8 +125,16 @@ public class MainActivity extends AppCompatActivity {
             startActivity(cambio8);
         }
         if(item.getItemId()==R.id.opc5){
+
+            Integer tamaño = info.lista.size();
+            if (tamaño == 0) {
+                Toast.makeText(this, "Lista vacía", Toast.LENGTH_SHORT).show();
+            }
+            else{
+
             Intent cambio8 = new Intent(this,Modificar.class);
             startActivity(cambio8);
+            }
         }
         if(item.getItemId()==R.id.opc6){
             Intent cambio8 = new Intent(this, Eliminar.class);

@@ -12,15 +12,17 @@
     </include>
 
     <androidx.cardview.widget.CardView
-        android:layout_width="match_parent"
-        android:layout_height="380dp"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
         app:cardElevation="25dp"
         app:cardCornerRadius="20dp">
         <LinearLayout
             android:layout_width="wrap_content"
-            android:layout_height="wrap_content">
+            android:layout_height="wrap_content"
+            android:orientation="horizontal">
 
             <CheckBox
+                android:id="@+id/c1"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content">
 
