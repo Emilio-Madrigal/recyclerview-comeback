@@ -6,10 +6,16 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:orientation="vertical"
-    tools:context=".MainActivity">
+    tools:context=".Ver2">
 
+    <include
+        android:id="@+id/toolbar"
+        layout="@layout/toolbar">
+
+    </include>
 
     <androidx.recyclerview.widget.RecyclerView
+        android:layout_marginTop="20dp"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:id="@+id/recyclerviewE">
@@ -17,6 +23,8 @@
     </androidx.recyclerview.widget.RecyclerView>
 
     <Button
+        android:onClick="eliminar"
+        android:layout_marginTop="20dp"
         android:id="@+id/EliminarB"
         android:backgroundTint="@color/delete"
         android:layout_gravity="center"

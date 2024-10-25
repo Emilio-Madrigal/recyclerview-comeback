@@ -11,6 +11,8 @@ import android.view.MenuItem;
 import android.view.View;
 import android.widget.Button;
 import android.widget.TextView;
+import android.widget.Toast;
+
 import androidx.activity.EdgeToEdge;
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
@@ -86,26 +88,46 @@ public class cardview extends AppCompatActivity {
 
     @Override
     public boolean onOptionsItemSelected(@NonNull MenuItem item) {
-        if(item.getItemId()==R.id.opc1){
-            Intent cambio7 = new Intent(this, ver.class);
-            startActivity(cambio7);
+        if(item.getItemId()==R.id.ver){
+
+            Integer tamaño = info.lista.size();
+            if (tamaño == 0) {
+                Toast.makeText(this, "Lista vacía", Toast.LENGTH_SHORT).show();
+            }
+            else{
+                Intent cambio8 = new Intent(this, ver.class);
+                startActivity(cambio8);
+            }
         }
-        if(item.getItemId()==R.id.opc2){
+        if(item.getItemId()==R.id.registro){
             Intent cambio8 = new Intent(this, MainActivity.class);
             startActivity(cambio8);
         }
-        if(item.getItemId()==R.id.opc3){
+        if(item.getItemId()==R.id.creador){
             Intent cambio8 = new Intent(this, Autor.class);
             startActivity(cambio8);
         }
-        if(item.getItemId()==R.id.opc4){
+        if(item.getItemId()==R.id.contacto){
             Intent cambio8 = new Intent(this, Contacto.class);
             startActivity(cambio8);
         }
-        if(item.getItemId()==R.id.opc5){
-            Intent cambio8 = new Intent(this,Modificar.class);
+        if(item.getItemId()==R.id.Modificar){
+
+            Integer tamaño = info.lista.size();
+            if (tamaño == 0) {
+                Toast.makeText(this, "Lista vacía", Toast.LENGTH_SHORT).show();
+            }
+            else{
+
+                Intent cambio8 = new Intent(this,Modificar.class);
+                startActivity(cambio8);
+            }
+        }
+        if(item.getItemId()==R.id.eliminar){
+            Intent cambio8 = new Intent(this, Ver2.class);
             startActivity(cambio8);
         }
         return super.onOptionsItemSelected(item);
     }
+
 }

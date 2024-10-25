@@ -101,7 +101,7 @@ public class MainActivity extends AppCompatActivity {
 
     @Override
     public boolean onOptionsItemSelected(@NonNull MenuItem item) {
-        if(item.getItemId()==R.id.opc1){
+        if(item.getItemId()==R.id.ver){
 
             Integer tamaño = info.lista.size();
             if (tamaño == 0) {
@@ -112,19 +112,19 @@ public class MainActivity extends AppCompatActivity {
             startActivity(cambio8);
             }
         }
-        if(item.getItemId()==R.id.opc2){
+        if(item.getItemId()==R.id.registro){
             Intent cambio8 = new Intent(this, MainActivity.class);
             startActivity(cambio8);
         }
-        if(item.getItemId()==R.id.opc3){
+        if(item.getItemId()==R.id.creador){
             Intent cambio8 = new Intent(this, Autor.class);
             startActivity(cambio8);
         }
-        if(item.getItemId()==R.id.opc4){
+        if(item.getItemId()==R.id.contacto){
             Intent cambio8 = new Intent(this, Contacto.class);
             startActivity(cambio8);
         }
-        if(item.getItemId()==R.id.opc5){
+        if(item.getItemId()==R.id.Modificar){
 
             Integer tamaño = info.lista.size();
             if (tamaño == 0) {
@@ -136,11 +136,12 @@ public class MainActivity extends AppCompatActivity {
             startActivity(cambio8);
             }
         }
-        if(item.getItemId()==R.id.opc6){
-            Intent cambio8 = new Intent(this, Eliminar.class);
+        if(item.getItemId()==R.id.eliminar){
+            Intent cambio8 = new Intent(this, Ver2.class);
             startActivity(cambio8);
         }
         return super.onOptionsItemSelected(item);
     }
+
 
 }
