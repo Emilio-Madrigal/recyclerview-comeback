@@ -17,46 +17,34 @@ import com.example.listadin.ver;
 import global.info;
 
 public class adaptadorver extends RecyclerView.Adapter<adaptadorver.activity> {
-    public Context context;
+public Context context;
 
     @NonNull
     @Override
-    public activity onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {
-
-        View v = View.inflate(context,R.layout.viewholder, null);
+    public adaptadorver.activity onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {
+        View v = View.inflate(context,R.layout.viewholder,null);
         activity obj = new activity(v);
-
         return obj;
     }
 
     @Override
-    public void onBindViewHolder(@NonNull activity miniactivity, int i) {
-        final int pos = i;
-        miniactivity.nombre.setText(info.lista.get(i).getTeam());
-        miniactivity.nombre.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                Intent card = new Intent(context, cardview.class);
-                card.putExtra("posicion", pos);
-                context.startActivity(card);
-            }
-        });
+    public void onBindViewHolder(@NonNull adaptadorver.activity holder, int position) {
+        holder.hola.setText("hola");
+
     }
 
     @Override
     public int getItemCount() {
-        return info.lista.size();
+        return 0;
     }
 
     public class activity extends RecyclerView.ViewHolder {
-
-        TextView nombre;
+        TextView hola;
 
         public activity(@NonNull View itemView) {
             super(itemView);
+            hola = itemView.findViewById(R.id.NE);
 
-            nombre = itemView.findViewById(R.id.theview);
         }
     }
-
 }

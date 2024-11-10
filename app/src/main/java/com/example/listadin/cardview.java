@@ -65,13 +65,13 @@ public class cardview extends AppCompatActivity {
 
     private void llamar() {
         Intent llamada = new Intent(Intent.ACTION_CALL);
-        llamada.setData(Uri.parse(  "tel: "+ NocontactoEC.getText().toString()));
-        if(ActivityCompat.checkSelfPermission(this, Manifest.permission.CALL_PHONE)!= PackageManager.PERMISSION_GRANTED){
-            ActivityCompat.requestPermissions(this, new String[]{
-                    Manifest.permission.CALL_PHONE
-            }, 10);
-        }
+        llamada.setData(Uri.parse("tel: "+NocontactoEC.getText().toString()));
+        if(ActivityCompat.checkSelfPermission(this,Manifest.permission.CALL_PHONE)!=PackageManager.PERMISSION_GRANTED);
+        ActivityCompat.requestPermissions(this,new String[]{
+                Manifest.permission.CALL_PHONE
+        },10);
         startActivity(llamada);
+
     }
 
     @Override
@@ -129,5 +129,4 @@ public class cardview extends AppCompatActivity {
         }
         return super.onOptionsItemSelected(item);
     }
-
 }

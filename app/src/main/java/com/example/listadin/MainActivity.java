@@ -1,6 +1,8 @@
 package com.example.listadin;
 
+import android.content.Context;
 import android.content.Intent;
+import android.content.SharedPreferences;
 import android.os.Bundle;
 import android.view.Menu;
 import android.view.MenuItem;
@@ -24,6 +26,7 @@ public class MainActivity extends AppCompatActivity {
 //    RecyclerView recyclerView;
     EditText NombreE,Puntos,JuegosJ,JuegosG,JuegosE,NocontactoE;
     Button guardar, limpieza;
+    SharedPreferences archivo;
 
     Toolbar toolbar;
 
@@ -43,6 +46,7 @@ public class MainActivity extends AppCompatActivity {
         limpieza=findViewById(R.id.limpiarB);
         guardar=findViewById(R.id.GuardarB);
         setSupportActionBar(toolbar);
+        archivo=this.getSharedPreferences("sesion", Context.MODE_PRIVATE);
 
         limpieza.setOnClickListener(new View.OnClickListener(){
 
@@ -140,6 +144,15 @@ public class MainActivity extends AppCompatActivity {
             Intent cambio8 = new Intent(this, Ver2.class);
             startActivity(cambio8);
         }
+//        if (item.getItemId()==R.id.cerrar){
+//            SharedPreferences.Editor editor=archivo.edit();
+//            editor.remove("usuario");
+//            editor.remove("contra");
+//            editor.remove("valido");
+//            Intent fin = new Intent(this, inicio.class);
+//            startActivity(fin);
+//            finish();
+//        }
         return super.onOptionsItemSelected(item);
     }
 

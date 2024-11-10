@@ -74,10 +74,6 @@ public class Modificar extends AppCompatActivity {
 
     private void siguiente() {
         Integer tamaño = info.lista.size();
-        if (tamaño == 0) {
-            Toast.makeText(this, "Lista vacía", Toast.LENGTH_SHORT).show();
-            return;
-        }
 
         posicion = (posicion + 1) % tamaño; // si sobrepasa vuelve a cero
         mostrarEquipo();
