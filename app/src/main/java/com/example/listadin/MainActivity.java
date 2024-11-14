@@ -144,7 +144,16 @@ public class MainActivity extends AppCompatActivity {
             Intent cambio8 = new Intent(this, Ver2.class);
             startActivity(cambio8);
         }
-//        if (item.getItemId()==R.id.cerrar){
+        if (item.getItemId()==R.id.cerrar){
+            if (archivo.contains("id_usuario")){
+                SharedPreferences.Editor editor=archivo.edit();
+                editor.remove("id_usuario");
+                editor.commit();
+                Intent x = new Intent(this,inicio.class);
+                startActivity(x);
+                finish();
+            }
+
 //            SharedPreferences.Editor editor=archivo.edit();
 //            editor.remove("usuario");
 //            editor.remove("contra");
@@ -152,7 +161,7 @@ public class MainActivity extends AppCompatActivity {
 //            Intent fin = new Intent(this, inicio.class);
 //            startActivity(fin);
 //            finish();
-//        }
+        }
         return super.onOptionsItemSelected(item);
     }
 

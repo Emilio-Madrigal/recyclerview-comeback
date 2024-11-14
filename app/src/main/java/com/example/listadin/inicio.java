@@ -28,9 +28,9 @@ import org.json.JSONException;
 import org.json.JSONObject;
 
 public class inicio extends AppCompatActivity {
-EditText user,password;
-Button loggin;
-SharedPreferences archivo;
+    EditText user,password;
+    Button loggin;
+    SharedPreferences archivo;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -51,19 +51,16 @@ SharedPreferences archivo;
             public void onClick(View view) {loggin();}
         });
     }
-
-
     public void loggin() {
+        String url = "http://192.168.1.110/bd/ingreso.php?usr=";
+        url = url+user.getText().toString();
+        url = url+"&pass=";
+        url = url+password.getText().toString();
 
-        String url = "192.168.1.110";//hace falta cambiar esto
-        url=url+user.getText().toString();
-        url=url+"&pass=";
-        url=url+password.getText().toString();
         JsonObjectRequest pet = new JsonObjectRequest(Request.Method.GET, url,
                 null, new Response.Listener<JSONObject>() {
             @Override
             public void onResponse(JSONObject response) {
-
                 try {
                     if (response.getInt("usr") != -1) {
                         Intent i = new Intent(inicio.this, MainActivity.class);
@@ -75,23 +72,21 @@ SharedPreferences archivo;
                     } else {
                         user.setText("");
                         password.setText("");
-
                     }
+                    Toast.makeText(inicio.this, response.toString(), Toast.LENGTH_SHORT).show();
                 } catch (JSONException e) {
                     throw new RuntimeException(e);
                 }
-                Toast.makeText(inicio.this, response.toString(), Toast.LENGTH_LONG).show();
             }
         }, new Response.ErrorListener() {
             @Override
             public void onErrorResponse(VolleyError volleyError) {
-                Log.d("yo",volleyError.getMessage());
+                Toast.makeText(inicio.this, volleyError.getMessage().toString(), Toast.LENGTH_SHORT).show();
+                Log.d("yo", volleyError.getMessage());
             }
-
-    });
-    RequestQueue lanzarpet = Volley.newRequestQueue(this);
-    lanzarpet.add(pet);
-
+        });
+        RequestQueue lanzarPeticion = Volley.newRequestQueue(this);
+        lanzarPeticion.add(pet);
 //        if(user.getText().toString().equals("emi")&&password.getText().toString().equals("123456")){
 //            Intent in=new Intent(this,MainActivity.class);
 //            SharedPreferences.Editor editor = archivo.edit();
