@@ -24,6 +24,7 @@
 
     </item>
     <item
+        android:icon="@drawable/logout"
         android:title="cerrar"
         android:id="@+id/cerrar"
         app:showAsAction="always">

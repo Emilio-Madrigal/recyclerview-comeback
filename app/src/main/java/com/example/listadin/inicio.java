@@ -52,7 +52,7 @@ public class inicio extends AppCompatActivity {
         });
     }
     public void loggin() {
-        String url = "http://192.168.1.110/bd/ingreso.php?usr=";
+        String url = "http://10.0.2.2/bd/ingreso.php?usr=";
         url = url+user.getText().toString();
         url = url+"&pass=";
         url = url+password.getText().toString();
